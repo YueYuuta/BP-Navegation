@@ -1,0 +1,43 @@
+.grid__container {
+  display: grid;
+  //   gap: 10px;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  height: 100vh;
+}
+
+app-header {
+  // background-color: red;
+  grid-area: header;
+}
+app-sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  background-color: pink;
+  grid-area: main;
+}
+app-footer {
+  background-color: red;
+  grid-area: footer;
+}
+
+@media (max-width: 600px) {
+  .grid__container {
+    display: grid;
+    //gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 1fr 50px;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    height: 100vh;
+  }
+}

@@ -1,0 +1,28 @@
+.scrollable {
+  height: calc(100vh - 100px) !important;
+  overflow-y: scroll;
+  width: 100%;
+  overflow-x: hidden;
+  //   overflow: hidden;
+}
+
+.container__flex {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.altura {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+p {
+  text-align: justify;
+}

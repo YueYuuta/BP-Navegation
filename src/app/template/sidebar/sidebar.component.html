@@ -1,0 +1,25 @@
+<ul class="list">
+
+  <li class="list__item" *ngFor="let menu of Menus">
+    <div class="pointer list__button list__button--click" routerLink="{{menu.ruta}}"
+      (click)="(menu.submenu) && selection(menu.id)">
+      <i class="list__img {{menu.icono}}"></i>
+
+      <a class="nav__link ">{{menu.Nombre}}</a>
+      <img *ngIf="menu.submenu" src="assets/icons/arrow.svg" class="list__arrow">
+    </div>
+
+    <ul *ngIf="menu.submenu" id="{{menu.id}}" class="list__show pointer">
+      <li class="list__inside" *ngFor="let sub of menu.submenu">
+        <a (click)="changeStatusNav(sub.Nombre)" class="nav__link nav__link--inside">{{sub.Nombre}}</a>
+      </li>
+
+
+    </ul>
+
+  </li>
+
+
+
+
+</ul>
