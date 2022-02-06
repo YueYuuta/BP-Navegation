@@ -31,10 +31,12 @@
 }
 
 .list__item {
+  // margin-top: 50px;
   list-style: none;
-  width: 100%;
+  // width: 100%;
   text-align: center;
   overflow: hidden;
+  padding-left: 84px;
 }
 
 .list__item--click {
@@ -44,9 +46,24 @@
 .list__button {
   display: flex;
   align-items: center;
-  gap: 1em;
-  width: 70%;
+  // height: 100%;
+  // gap: 4px;
+  // width: 70%;
   margin: 0 auto;
+}
+.list__button-subItem {
+  display: flex;
+  align-items: center;
+  // height: 100%;
+  // gap: 4px;
+  // width: 70%;
+  margin: 0 auto;
+  padding-top: 8px;
+  // padding-bottom: 40px;
+  margin-left: 1rem;
+}
+.subitemPadd {
+  padding-bottom: 40px;
 }
 
 .arrow .list__arrow {
@@ -54,15 +71,173 @@
 }
 
 .list__arrow {
-  margin-left: auto;
+  margin-left: 38px;
   transition: transform 0.3s;
+  height: 18px;
+  // width: 12px;
+  color: #0f265c;
 }
 
 .list__show {
-  width: 80%;
-  margin-left: auto;
-  border-left: 2px solid #303440;
+  // width: 100%;
+  margin-left: 1rem;
+  border-left: 1px solid #b7b7b9;
   list-style: none;
   transition: height 0.4s;
   height: 0;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.list__show-line {
+  margin-left: 100px;
+  border-left: 1px solid #b7b7b9;
+  height: 24px;
+  list-style: none;
+  margin-bottom: 4px;
+  margin-top: -4px;
+}
+
+// .hiddeMenu {
+//   transition: transform 0.3s ease-out;
+//   transform: scaleY(0);
+//   height: 0;
+// }
+
+// .showMenu {
+//   transition: transform 0.3s ease-out;
+//   height: auto;
+//   transform: scaleY(1);
+// }
+
+.list__button svg#checkbox {
+  width: 2rem;
+  height: 2rem;
+  stroke: #31a451;
+  stroke-width: 6;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+
+  .circle {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    fill: #d2d2d2;
+    transition: stroke-dashoffset 0.5s,
+      fill 0.5s 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .check {
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    stroke: #fff;
+    fill: none;
+    transition: all 0.5s 0.5s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+}
+
+.list__button-subItem svg#checkbox {
+  width: 0.7rem;
+  height: 0.7rem;
+  stroke: #31a451;
+  stroke-width: 6;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+
+  .circle {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    fill: #d2d2d2;
+    transition: stroke-dashoffset 0.5s,
+      fill 0.5s 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .check {
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    stroke: #fff;
+    fill: none;
+    transition: all 0.5s 0.5s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+}
+
+.check-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.progress-line.complete {
+  .progress-percent {
+    width: 100%;
+    background: #31a451;
+  }
+}
+
+.check-box.active {
+  svg#checkbox {
+    .circle {
+      fill: #0f265c;
+    }
+  }
+}
+.check-box.complete {
+  svg#checkbox {
+    .circle {
+      stroke-dashoffset: 0;
+      fill: #31a451;
+    }
+
+    .check {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+.link__name {
+  text-decoration: none;
+  color: #6e6e73;
+  font-size: 1rem;
+  margin-left: 12px;
+}
+
+.active {
+  color: #0f265c;
+}
+
+.link__item {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+  width: 112px;
+  height: 24px;
+}
+
+.progress-line {
+  width: 24px;
+  margin: {
+    top: 8px;
+    bottom: 12px;
+  }
+  height: 0.5px;
+  overflow: hidden;
+  display: inline-block;
+  background: #b7b7b9;
+  border-radius: 10px;
+  transform: rotate(90deg);
+
+  .progress-percent {
+    height: inherit;
+    width: 0%;
+    transition: all 0.5s 0.5s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-line {
+  padding-left: 88px;
 }

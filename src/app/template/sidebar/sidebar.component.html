@@ -1,23 +1,52 @@
 <ul class="list">
+  <ng-container *ngFor="let menu of Menus; index as i">
+    <li class="list__item">
+      <div class="pointer list__button" routerLink="{{menu.ruta}}" (click)="(menu.submenu) && selection(menu.id)">
+        <div class="check-box active ">
+          <svg id="checkbox" viewBox="0 0 100 100">
+            <circle class="circle" cx="50.5" cy="49" r="45" />
+            <polyline class="check" points="28.5,51.9 41.9,65.3 72.5,32.8 " />
+          </svg>
+          <div class="link__item">
+            <a routerLink="{{menu.ruta}}" class="link__name active">{{menu.Nombre}}</a>
+          </div>
 
-  <li class="list__item" *ngFor="let menu of Menus">
-    <div class="pointer list__button list__button--click" routerLink="{{menu.ruta}}"
-      (click)="(menu.submenu) && selection(menu.id)">
-      <i class="list__img {{menu.icono}}"></i>
+          <img *ngIf="menu.submenu" src="assets/icons/arrow.svg" class="list__arrow">
 
-      <a class="nav__link ">{{menu.Nombre}}</a>
-      <img *ngIf="menu.submenu" src="assets/icons/arrow.svg" class="list__arrow">
-    </div>
 
-    <ul *ngIf="menu.submenu" id="{{menu.id}}" class="list__show pointer">
-      <li class="list__inside" *ngFor="let sub of menu.submenu">
-        <a (click)="changeStatusNav(sub.Nombre)" class="nav__link nav__link--inside">{{sub.Nombre}}</a>
-      </li>
+        </div>
 
+      </div>
+
+      <ul *ngIf="menu.submenu" id="{{menu.id}}" class="list__show pointer">
+        <li class="list__inside" *ngFor="let sub of menu.submenu;index as iSubb">
+          <div class="list__button-subItem " (click)="changeStatusNav(sub.Nombre)"
+            [ngClass]="{'subitemPadd': iSubb < menu.submenu.length -1 }">
+            <div class="check-box active ">
+              <svg id="checkbox" viewBox="0 0 100 100">
+                <circle class="circle" cx="50.5" cy="49" r="45" />
+                <polyline class="check" points="28.5,51.9 41.9,65.3 72.5,32.8 " />
+              </svg>
+              <div class="link__item">
+                <a routerLink="{{menu.ruta}}" class="link__name active">{{menu.Nombre}}</a>
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </li>
+
+
+      </ul>
+
+    </li>
+    <ul *ngIf="itemNumber-1 > i" class="list__show-line">
 
     </ul>
 
-  </li>
+  </ng-container>
 
 
 

@@ -12,8 +12,14 @@ export const data: MenuModel[] = [
     ruta: 'formulario/inicio',
     Nombre: 'Datos Empresa',
     icono: 'fas fa-user',
-    id: 2,
-    submenu: [{ Nombre: 'inicio1' }, { Nombre: 'inicio2' }],
+    id: 1,
+    submenu: [
+      { Nombre: 'inicio1' },
+      { Nombre: 'inicio2' },
+      { Nombre: 'inicio3' },
+      { Nombre: 'inicio4' },
+      { Nombre: 'inicio5' },
+    ],
   },
 
   {
@@ -33,6 +39,6 @@ export const data: MenuModel[] = [
     Nombre: 'Menu 4',
     icono: null,
     id: 4,
-    submenu: null,
+    submenu: [{ Nombre: 'menu' }, { Nombre: 'menu' }, { Nombre: 'menu' }],
   },
 ];

@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewChecked,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { MenuModel } from 'src/app/models';
 import { NavegationService } from '../../services/navegation.service';
 
@@ -7,15 +13,25 @@ import { NavegationService } from '../../services/navegation.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, AfterViewChecked {
   @Input() Menus: MenuModel[];
+  itemNumber: number;
+  lastIdSumMenu: string = '1';
 
   constructor(private readonly _navegationPageService: NavegationService) {}
+  ngAfterViewChecked(): void {
+    this.submenuChange(this.lastIdSumMenu);
+  }
 
   ngOnInit(): void {}
 
   selection(id: number) {
+    this.submenuChange(this.lastIdSumMenu);
     const idString = id.toString();
+    this.submenuChange(idString);
+    this.lastIdSumMenu = idString;
+  }
+  submenuChange(idString: string) {
     const elementMenu = document.getElementById(idString);
     elementMenu.parentElement.classList.toggle('arrow');
     let height = 0;
@@ -27,6 +43,6 @@ export class SidebarComponent implements OnInit {
   }
 
   changeStatusNav(pagina: string): void {
-    this._navegationPageService.navegationPages(pagina);
+    this._navegationPageService.navegationPagesSection(pagina);
   }
 }
