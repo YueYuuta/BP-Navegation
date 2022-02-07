@@ -21,7 +21,7 @@ export class ServicioComponent implements OnInit {
   }
 
   changeEstadoNav(): void {
-    this._navigationPages.pagina$
+    this._navigationPages.paginaSection$
       // .pipe(takeUntil(this.stop$))
       .subscribe((pagina: string) => {
         switch (pagina) {

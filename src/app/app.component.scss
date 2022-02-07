@@ -4,9 +4,9 @@
   grid-template-columns: 320px 1fr;
   grid-template-rows: 50px 1fr 50px;
   grid-template-areas:
-    "sidebar header"
+    "header header"
     "sidebar main"
-    "sidebar footer";
+    "sidebar main";
   height: 100vh;
 }
 

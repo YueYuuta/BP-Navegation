@@ -10,7 +10,7 @@ export const data: MenuModel[] = [
   // },
   {
     ruta: 'formulario/inicio',
-    Nombre: 'Datos Empresa',
+    Nombre: 'Datos Generales',
     icono: 'fas fa-user',
     id: 1,
     submenu: [
@@ -24,7 +24,7 @@ export const data: MenuModel[] = [
 
   {
     ruta: 'formulario/servicios',
-    Nombre: 'Menu 3',
+    Nombre: 'Socios o accionistas',
     icono: 'fas fa-plus',
     id: 3,
     submenu: [
@@ -36,9 +36,35 @@ export const data: MenuModel[] = [
 
   {
     ruta: 'formulario/static',
-    Nombre: 'Menu 4',
+    Nombre: 'Datos regulatorios',
     icono: null,
     id: 4,
     submenu: [{ Nombre: 'menu' }, { Nombre: 'menu' }, { Nombre: 'menu' }],
   },
+  // {
+  //   ruta: 'formulario/inicio',
+  //   Nombre: 'Cuentas y chequera',
+  //   icono: 'fas fa-user',
+  //   id: 5,
+  //   submenu: [
+  //     { Nombre: 'inicio1' },
+  //     { Nombre: 'inicio2' },
+  //     { Nombre: 'inicio3' },
+  //     { Nombre: 'inicio4' },
+  //     { Nombre: 'inicio5' },
+  //   ],
+  // },
+  // {
+  //   ruta: 'formulario/inicio',
+  //   Nombre: 'Cash management',
+  //   icono: 'fas fa-user',
+  //   id: 6,
+  //   submenu: [
+  //     { Nombre: 'inicio1' },
+  //     { Nombre: 'inicio2' },
+  //     { Nombre: 'inicio3' },
+  //     { Nombre: 'inicio4' },
+  //     { Nombre: 'inicio5' },
+  //   ],
+  // },
 ];
