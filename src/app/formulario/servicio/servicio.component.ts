@@ -7,9 +7,9 @@ import { NavegationService } from 'src/app/services/navegation.service';
   styleUrls: ['./servicio.component.scss'],
 })
 export class ServicioComponent implements OnInit {
-  @ViewChild('servicio1', { static: true }) servicio1: ElementRef;
-  @ViewChild('servicio2', { static: true }) servicio2: ElementRef;
-  @ViewChild('servicio3', { static: true }) servicio3: ElementRef;
+  @ViewChild('servicio1', { static: true }) servicio1!: ElementRef;
+  @ViewChild('servicio2', { static: true }) servicio2!: ElementRef;
+  @ViewChild('servicio3', { static: true }) servicio3!: ElementRef;
   constructor(private readonly _navigationPages: NavegationService) {}
 
   ngOnInit(): void {

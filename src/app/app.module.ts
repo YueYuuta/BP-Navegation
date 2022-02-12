@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormularioModule } from './formulario/formulario.module';
 
 import { TemplateModule } from './template/template.module';
+// import { InsideViewportDirective } from './directives/inside-viewport.directive';
 
 @NgModule({
   declarations: [AppComponent],

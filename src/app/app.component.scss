@@ -16,6 +16,7 @@ app-header {
 }
 app-sidebar {
   grid-area: sidebar;
+  position: fixed;
 }
 
 .main {

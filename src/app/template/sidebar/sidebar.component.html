@@ -3,7 +3,7 @@
     <li class="list__item " [ngClass]="{'arrow': lastIdSumMenu.id === menu.id.toString() && lastIdSumMenu.open}">
       <div class="pointer list__button" routerLink="{{menu.ruta}}" (click)="(menu.submenu) && selection(menu.id)">
         <div class="check-box  "
-          [ngClass]="{'active': lastIdSumMenu.status === 'active' && lastIdSumMenu.id === menu.id.toString(),'complete': lastIdSumMenu.status === 'complete' && lastIdSumMenu.id === menu.id.toString()}">
+          [ngClass]="{'active': lastIdSumMenu.status === 'active' && lastIdSumMenu.id === menu.id.toString() && !globalStatus[menu.Nombre],'complete': globalStatus[menu.Nombre]}">
           <svg id="checkbox" viewBox="0 0 100 100">
             <circle class="circle" cx="50.5" cy="49" r="45" />
             <polyline class="check" points="28.5,51.9 41.9,65.3 72.5,32.8 " />
@@ -12,7 +12,7 @@
             <a routerLink="{{menu.ruta}}" class="link__name active">{{menu.Nombre}}</a>
           </div>
 
-          <img *ngIf="menu.submenu" src="assets/icons/arrow.svg" class="list__arrow">
+          <!-- <img *ngIf="menu.submenu" src="assets/icons/arrow.svg" class="list__arrow"> -->
 
 
         </div>
@@ -21,15 +21,16 @@
 
       <ul *ngIf="menu.submenu" id="{{menu.id}}" class="list__show pointer">
         <li class="list__inside" *ngFor="let sub of menu.submenu;index as iSubb">
-          <div class="list__button-subItem " (click)="changeStatusNav(sub.Nombre)"
+          <div class="list__button-subItem " (click)="changeStatusNav(sub.alias,sub.Nombre)"
             [ngClass]="{'subitemPadd': iSubb < menu.submenu.length -1 }">
-            <div class="check-box complete ">
+            <div class="check-box "
+              [ngClass]="{'complete': subPagestatus[sub.Nombre],'active': !subPagestatus[sub.Nombre] && subSelct === sub.Nombre}">
               <svg id="checkbox" viewBox="0 0 100 100">
                 <circle class="circle" cx="50.5" cy="49" r="45" />
                 <polyline class="check" points="28.5,51.9 41.9,65.3 72.5,32.8 " />
               </svg>
               <div class="link__item">
-                <a routerLink="{{menu.ruta}}" class="link__name active">{{sub.Nombre}}</a>
+                <a routerLink="{{menu.ruta}}" class="link__name_sub active">{{sub.Nombre}}</a>
               </div>
 
 
